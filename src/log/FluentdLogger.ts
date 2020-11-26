@@ -34,8 +34,7 @@ import { HttpConnectionResolver } from 'pip-services3-rpc-node';
  * 
  * ### References ###
  * 
- * - <code>\*:context-info:\*:\*:1.0</code>   (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/classes/info.contextinfo.html ContextInfo]] to detect the context id 
- *                                              and specify counters source
+ * - <code>\*:context-info:\*:\*:1.0</code>   (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/classes/info.contextinfo.html ContextInfo]] to detect the context id and specify counters source
  * - <code>\*:discovery:\*:\*:1.0</code>      (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
  * 
  * ### Example ###
