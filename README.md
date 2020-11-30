@@ -4,7 +4,7 @@ This module is a part of the [Pip.Services](http://pipservices.org) polyglot mic
 
 The Fluentd module contains logging components that store data on the Fluentd server.
 
-This module contains the following packages:
+The module contains the following packages:
 - **Build** - contains a factory for the construction of components
 - **Log** - Logging components
 
