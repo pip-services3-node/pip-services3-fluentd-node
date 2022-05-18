@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FluentdLogger = void 0;
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
 const pip_services3_components_node_1 = require("pip-services3-components-node");
 const pip_services3_rpc_node_1 = require("pip-services3-rpc-node");
@@ -16,7 +17,7 @@ const pip_services3_rpc_node_1 = require("pip-services3-rpc-node");
  * - level:             maximum log level to capture
  * - source:            source (context) name
  * - connection(s):
- *     - discovery_key:         (optional) a key to retrieve the connection from [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]]
+ *     - discovery_key:         (optional) a key to retrieve the connection from [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]]
  *     - protocol:              connection protocol: http or https
  *     - host:                  host name or IP address
  *     - port:                  port number
@@ -29,9 +30,8 @@ const pip_services3_rpc_node_1 = require("pip-services3-rpc-node");
  *
  * ### References ###
  *
- * - <code>\*:context-info:\*:\*:1.0</code>   (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/classes/info.contextinfo.html ContextInfo]] to detect the context id
- *                                              and specify counters source
- * - <code>\*:discovery:\*:\*:1.0</code>      (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
+ * - <code>\*:context-info:\*:\*:1.0</code>   (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/classes/info.contextinfo.html ContextInfo]] to detect the context id and specify counters source
+ * - <code>\*:discovery:\*:\*:1.0</code>      (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
  *
  * ### Example ###
  *
@@ -133,6 +133,7 @@ class FluentdLogger extends pip_services3_components_node_1.CachedLogger {
                 clearInterval(this._timer);
             this._cache = [];
             this._timer = null;
+            this._client.end();
             this._client = null;
             if (callback)
                 callback(null);

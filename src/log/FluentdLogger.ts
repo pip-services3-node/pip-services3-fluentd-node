@@ -155,6 +155,8 @@ export class FluentdLogger extends CachedLogger implements IReferenceable, IOpen
 
             this._cache = [];
             this._timer = null;
+
+            this._client.end();
             this._client = null;
                 
             if (callback) callback(null);
